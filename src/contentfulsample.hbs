@@ -1,0 +1,35 @@
+---
+pagination:
+  data: contentfulData
+  size: 3
+  alias: blog
+layout: layouts/default.hbs
+title: blog's List
+
+---
+
+<div class="text-center my-5">
+    <h1 class="page-title">{{ title }}</h1>
+</div>
+
+<div class="row">
+    {{#each pagination.items as |blog|}}
+      <div class="col-md-4">
+        <a href="/{{blog.permalink.en-US}}" class="card-link">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">{{blog.title.en-US}}</h5>
+              {{#if this.imageUrl}}
+              <img class="img-square2 " src="https:{{blog.imageUrl}}" alt="{{blog.title.en-US}}" />
+            {{/if}}
+                <p>{{blog.body.en-US}}</p>
+                <strong>Published Date:</strong> {{dateformat blog.publicationDate}}<br>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+</div>
+
+{{> pagination }}

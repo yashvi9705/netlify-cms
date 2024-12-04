@@ -1,0 +1,81 @@
+---
+pagination:
+  data: employeeData
+  size: 3
+  page: 1   
+  alias: employee
+layout: layouts/default.hbs
+position: position
+title: Employee List
+---
+
+<div class="text-center my-5">
+    <h1 class="page-title">{{ title }}</h1>
+</div>
+
+
+    <div class="row">
+        
+      <!-- Sort Buttons -->
+<div class="sort-buttons mb-3">
+  <button id="sort-by-department" class="btn btn-primary">Sort by Department</button>
+</div>
+
+<!-- Department Container (Initially Displayed) -->
+<div id="department-container" class="mt-4" style="display: none;">
+  {{#each collections.employeesByDepartment}}
+      <div>
+        <h2>{{this.department}}</h2>
+        <ul>
+          <li>
+            <strong>{{this.name}}</strong> - {{this.position}}
+          </li>
+        </ul>
+      </div>
+  {{/each}}
+</div>
+
+
+
+
+
+
+    {{#each pagination.items as |employee|}}
+      <div class="col-md-4">
+        <a href="/{{employee.permalink.en-US}}" class="card-link">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">{{employee.name.en-US}}</h5>
+              {{#if this.imageUrl}}
+              <img class="img-square2 " src="https:{{employee.imageUrl}}" alt="{{blog.title.en-US}}" />
+            {{/if}}
+                <strong>ID:</strong> {{ employee.id.en-US}}<br>
+                <strong>Age :</strong> {{ employee.age.en-US}}<br>
+                <strong>Email Address:</strong> {{ employee.email.en-US}}<br>
+                <strong>Contact Number:</strong> {{ employee.phone.en-US}}<br>
+                <strong>Position:</strong> {{ employee.position.en-US}}<br>
+                <strong>Department:</strong> {{ employee.department.en-US}}<br>
+                <strong>Location of Work:</strong> {{ employee.location.en-US}}<br>
+                <strong>Years of Exp:</strong> {{ employee.yearsOfExp.en-US}}<br>
+                <strong>Employment Date:</strong> {{dateformat employee.employmentDate}}<br>
+              </p>
+              {{!-- <p class="card-slug">Slug: {{employee.permalink.en-US}}</p> --}}
+            </div>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+</div>
+
+<script>
+  // JavaScript for Button-based Sorting
+  document.getElementById('sort-by-department').addEventListener('click', function() {
+    document.getElementById('department-container').style.display = 'block';
+  });
+
+</script>
+
+{{> pagination }}
+
+
+

@@ -1,0 +1,230 @@
+
+  <div class="header">
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Pet list</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/index.css">
+      </head>
+      <body>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbarScroll" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">Yashvi Patel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+        
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/employeeDirectory">Employee Directory</a>
+                </li>
+    
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/contentfulsample">Blog List</a>
+                </li>
+    
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/about">About Me</a>
+                </li>
+        
+    
+    
+              </ul>
+            </div>
+          </div>
+        </nav>
+    
+        <script>
+            const header = document.querySelector('.navbar');
+    
+        window.onscroll = function() {
+            var top = window.scrollY;
+            if(top >=100) {
+                header.classList.add('navbarDark');
+            }
+            else {
+                header.classList.remove('navbarDark');
+            }
+        }
+        </script>
+    </header>  </div>
+
+  <div id="main">
+    
+
+    
+               
+
+    
+               
+
+    
+               
+
+    
+               
+
+    
+
+       
+<h2>Assignment 1</h2>
+<hr>
+<h3>Helpful Links</h3>
+<p><a href="https://www.11ty.dev/docs/">11ty Docs</a></p>
+<h3>General Information</h3>
+<ul>
+<li>Rubric
+<ul>
+<li>/5 Functionality</li>
+<li>/5 Creativity and Design</li>
+<li>/5 Documentation</li>
+<li>/5 Understanding of Project Requirements</li>
+<li>-5 (25%) Late</li>
+<li>-20 (100%) More than 72 hours late</li>
+</ul>
+</li>
+</ul>
+<h3>Requirements</h3>
+<p>You will create an 11ty project demonstrating the concepts of modern web development practices.</p>
+<ul>
+<li>Decide on a theme and build your application around it.</li>
+<li>Your header should have links to your lab/assignment instructions, write-ups, and other content pages.</li>
+<li>You must have at least one data file that has a list of things relevant to your theme.</li>
+</ul>
+<h3>Your project will:</h3>
+<ul>
+<li>
+<p>Utilize a eleventy.config.js file for configuration</p>
+<ul>
+<li>Store your application code in a <code>src</code> folder, and your build artifacts in a <code>dist</code> folder.</li>
+<li>Use <code>passthroughCopy</code> to ensure your css and images are copied into your <code>dist</code> folder.</li>
+<li>Add a watch target to your <code>css</code> folder so that when your styles change, the watch server automatically rebuilds.
+<ul>
+<li>For a bonus point, configure <code>SASS</code> and create at least 5 custom styles with it to show that it works and you understand what it's doing.</li>
+</ul>
+</li>
+<li>Listen for the <code>eleventy.before</code> event and have it delete your entire <code>dist</code> folder before your build step starts.</li>
+</ul>
+</li>
+<li>
+<p>Use a template engine that's not Nunjucks.</p>
+</li>
+<li>
+<p>Use front matter in content files for metadata.</p>
+</li>
+<li>
+<p>Reuse layout files to maintain structural consistency.</p>
+</li>
+<li>
+<p>Handle static assets, your site should include some images and some custom styles.</p>
+</li>
+<li>
+<p>Create <code>header</code> and <code>footer</code> partials.</p>
+<ul>
+<li>Your main navigation should live in your <code>header</code> file.</li>
+<li>The footer should include your full name, a copyright symbol, and the current year.  Use JavaScript to put the year here so it stays up to date over time.
+<ul>
+<li>If you want, add links to your socials in the footer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Create other static pages,</p>
+<ul>
+<li>An <code>about</code> page that includes some details about yourself.  Include a way for potential employers to contact you.</li>
+<li>A <code>404</code> page that gets redirected to when a page is not found.  Configure the 11ty server so that it uses this page.</li>
+<li>A <code>terms-and-conditions</code> page, you can use GenAI or grab a template from online to populate this page.
+<ul>
+<li>Put a link to this page in your footer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Organize content with the use of collections and pagination.</p>
+<ul>
+<li>Create a partial template for your pagination control.</li>
+<li>Style the control with bootstrap classes.</li>
+<li>The page number you're currently on should be <code>active</code>.</li>
+<li>Include <code>Next</code> and <code>Previous</code> buttons.
+<ul>
+<li>If you're on the first page, <code>Previous</code> should be disabled.</li>
+<li>If you're on the last page, <code>Next</code> should be disabled.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The theme/content of your site is your own to choose.  Be as creative as you’d like.  You may look at the starter project for inspiration, but your final project should be substantially different.</p>
+<p>Further you will provide documentation that indicates all key aspects of the project and guidance on how to maintain. If the scope of the project has significantly shifted since Lab 1, this is not necessarily a problem, but indicate how and why.</p>
+<h3>Grading Summary</h3>
+<p>For specifics, see the assignment rubric on DC Connect.</p>
+<ul>
+<li>
+<p>/5 functionality</p>
+</li>
+<li>
+<p>/5 creativity and design</p>
+</li>
+<li>
+<p>/5 documentation</p>
+</li>
+<li>
+<p>/5 understanding of project requirements</p>
+</li>
+<li>
+<p>-5 (25%) late</p>
+</li>
+<li>
+<p>-20 (100%) more than 72 hours late</p>
+</li>
+</ul>
+               
+
+    
+               
+
+    
+               
+
+    
+               
+
+</div>
+  </div>
+
+    <footer class="text-center mt-3 footer">
+        <p>&copy; Yashvi Patel <span id="year"></span></p>
+        <span class="list-inline social-icons">
+            <span class="p-2 text-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" height="20px" width="20px"> 
+                <a href="https://github.com/yashvi9705" target="_blank">GitHub</a>
+            </span>
+            <span class="p-2 text-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" height="20px" width="20px"> 
+                <a href="https://www.linkedin.com/in/yashvi-patel-76014b261/" target="_blank">LinkedIn</a>
+            </span>
+            <span class="p-2 text-center"><img src="/img/TermsandCondition.png" height="20px" width="20px"> 
+                <a href="/TermsandCondition/" target="_blank">Terms and Conditions</a>
+            </span>    
+        </span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      </body>
+    </html>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    
+
+    

@@ -1,0 +1,21 @@
+---
+pagination:
+  data: contentfulData
+  size: 3
+  alias: blog
+layout: layouts/default.hbs
+---
+
+<div class="row">
+
+{{#each pagination.items as |blog|}}
+     
+     {{#if (eq blog.permalink.en-US "Lab2/lab2Deliverable")}}   
+        {{#myShortcode}} 
+        {{blog.content.en-US}}  
+        {{/myShortcode}}  
+    {{/if}}
+               
+{{/each}}
+
+</div>

@@ -1,0 +1,204 @@
+
+  <div class="header">
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Pet list</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/index.css">
+      </head>
+      <body>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbarScroll" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">Yashvi Patel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+        
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/employeeDirectory">Employee Directory</a>
+                </li>
+    
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/contentfulsample">Blog List</a>
+                </li>
+    
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/about">About Me</a>
+                </li>
+        
+    
+    
+              </ul>
+            </div>
+          </div>
+        </nav>
+    
+        <script>
+            const header = document.querySelector('.navbar');
+    
+        window.onscroll = function() {
+            var top = window.scrollY;
+            if(top >=100) {
+                header.classList.add('navbarDark');
+            }
+            else {
+                header.classList.remove('navbarDark');
+            }
+        }
+        </script>
+    </header>  </div>
+
+  <div id="main">
+    
+<div class="row">
+
+     
+               
+     
+<h2>LAB 2 Deliverable</h2>
+<h3>Different headless CMS systems.</h3>
+<h3>1. Contentful</h3>
+<hr>
+<ul>
+<li>Contentful was an early player in the headless space and was originally considered a developer-centric platform, but in the certain years feature development has leaned more towards the business user.</li>
+</ul>
+<h5>Features:</h5>
+<ul>
+<li>It has a large marketplace of apps and extension to connect range of tools and works with all modern frameworks.</li>
+<li>It can deliver content to any frontend channel via API.</li>
+</ul>
+<h5>Limitations:</h5>
+<ul>
+<li>It lacks a couple of factors when it comes to data modeling and developer experience.</li>
+<li>Contentful studio editor is only available at the premium pricing tier, with a limited editing UI.</li>
+</ul>
+<h3>2. Prismic</h3>
+<hr>
+<ul>
+<li>It lets editors build web and mobile pages like a slide deck. developers can create fully designed page slice which they can mix and match to quickly build pages.</li>
+</ul>
+<h5>Features:</h5>
+<ul>
+<li>Developers can define content slices and create a variety of front-end design options for each slice using Next.js or Sceltekit as a framework.</li>
+<li>Editors can pick different options to build a page which allows them to create unique pages with a consistent design.</li>
+</ul>
+<h5>Limitations:</h5>
+<ul>
+<li>It is terrific if we want to create slick looking marketing brochure sites and is not intended to handle more complex use cases.</li>
+<li>It is difficult to create relationship logic between slices and developer testing is only available in the platinum pricing tier.</li>
+</ul>
+<h3>3. Sanity</h3>
+<ul>
+<li>It is a good fit for small to medium-sized teams prioritizing real-time collaborations and a customizable content studio.</li>
+</ul>
+<h5>Features:</h5>
+<ul>
+<li>It allows real-time collaboration with live multi-user editing.</li>
+<li>It has customizable content studio for intuitive editorial experience.</li>
+<li>It has pay-as-you-go pricing which is suitable for scaling projects.</li>
+</ul>
+<h5>Limitations:</h5>
+<ul>
+<li>It requires development resources for initial setup and ongoing maintenance.</li>
+<li>It is a steeper learning curve for non-technical users compared to traditional CMSs.</li>
+</ul>
+<h3>4. Strapi</h3>
+<ul>
+<li>It provides a core platform logic that developers can extend with custom built plugins.The combination of open source and headless makes it a great fit for certain companies.</li>
+</ul>
+<h5>Features:</h5>
+<ul>
+<li>The community edition is free but we do need to pay for the cost on hosting, feature development and platform maintenance.</li>
+<li>The entire codebase is available on github and open to customization, including the API.</li>
+</ul>
+<h5>Limitations:</h5>
+<ul>
+<li>It has typical problems with the open source software.</li>
+<li>As a very developer-centric solution it can be hard to learn for business users and since the user is fully responsible for the performance and security it gets more complex to maintain when more customization is added.</li>
+</ul>
+<h3>5. Ghost</h3>
+<ul>
+<li>It is a headless CMS and blogging platform designed for writers and publishers. It offers a streamlined, intuitive interface for creating and managing content, as well as a variety of powerful tools for monetizing content and building a loyal audience.</li>
+</ul>
+<h5>Features:</h5>
+<ul>
+<li>Ghost provides a simple, distraction-free interface for creating and publishing blog posts and other content types.</li>
+<li>It offers a variety of customizable themes, making it easy to create a unique look and feel for your website or blog.</li>
+</ul>
+<h5>Limitations:</h5>
+<ul>
+<li>It has limited customization options for non-blog content types.</li>
+<li>May not be ideal for businesses with more complex needs.</li>
+</ul>
+<hr>
+<p>After researching a few options, I tried setting up Prismic, Contentful, and Strapi, and decided to go with Contentful for my next assignment. It had a user-friendly interface, good API support, and worked well with my Handlebars project. Contentful also made it easy to manage my content and fit my assignment needs better overall.</p>
+<p>In the below setup:</p>
+<ul>
+<li>
+<p>The first two images show the code setup in Eleventy configuration and a template page to connect it as the headless CMS.</p>
+</li>
+<li>
+<p>The next two images display the CMS account setup, blog initialization, and the final output of the blog content rendered on Eleventy.</p>
+</li>
+</ul>
+<h4>CONTENTFUL setup</h4>
+<h5><img src="/img/contentful1.png" alt="samplepage"> <img src="/img/contentful2.png" alt="samplepage"></h5>
+<h6><img src="/img/contentful3.png" alt="samplepage"> <img src="/img/contentful4.png" alt="samplepage"></h6>
+<hr>
+<h4>PRISMIC setup</h4>
+<h6><img src="/img/prismic3.png" alt="samplepage"> <img src="/img/prismic2.png" alt="samplepage"></h6>
+<h5><img src="/img/prismicCMS.png" alt="samplepage"> <img src="/img/prismic4.png" alt="samplepage"></h5>
+<hr>
+<h4>SANITY setup</h4>
+<h5><img src="/img/sanity1.png" alt="samplepage"> <img src="/img/sanity2.png" alt="samplepage"></h5>
+<h6><img src="/img/sanity3.png" alt="samplepage"> <img src="/img/sanity4.png" alt="samplepage"></h6>
+<hr>
+<h2>Links</h2>
+<ul>
+<li><a href="https://hygraph.com/blog/best-headless-cms">Ghost and Strapi</a></li>
+<li><a href="https://hackernoon.com/pros-and-cons-of-using-markdown-for-technical-writing-34f277418a8a">All the CMS</a></li>
+<li><a href="https://www.searchenginejournal.com/best-headless-cms/522674/#sanity">Sanity</a></li>
+</ul>
+<hr>
+               
+     
+               
+
+</div>
+  </div>
+
+    <footer class="text-center mt-3 footer">
+        <p>&copy; Yashvi Patel <span id="year"></span></p>
+        <span class="list-inline social-icons">
+            <span class="p-2 text-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" height="20px" width="20px"> 
+                <a href="https://github.com/yashvi9705" target="_blank">GitHub</a>
+            </span>
+            <span class="p-2 text-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" height="20px" width="20px"> 
+                <a href="https://www.linkedin.com/in/yashvi-patel-76014b261/" target="_blank">LinkedIn</a>
+            </span>
+            <span class="p-2 text-center"><img src="/img/TermsandCondition.png" height="20px" width="20px"> 
+                <a href="/TermsandCondition/" target="_blank">Terms and Conditions</a>
+            </span>    
+        </span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      </body>
+    </html>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    
+
+    
