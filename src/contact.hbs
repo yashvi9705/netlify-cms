@@ -1,0 +1,165 @@
+---
+layout: layouts/default.hbs
+---
+<h1>contact us page </h1>
+<form id="form" class="email__form" name="contact" method="POST">
+  <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" class="form-control" placeholder="Enter the subject" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <input type="text" id="message" name="message" class="form-control" placeholder="Enter your message"  required>
+    </div>
+
+    <button type="submit" class="btn">Submit</button>
+  {{!-- <p>
+    <label>Name <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Email <input type="email" name="email" /></label>
+  </p>
+  <p> --}}
+    {{!-- <button type="submit">Send</button> --}}
+  </p>
+</form>
+
+
+{{!-- <script>
+// Mailgun setup
+const mailgun = new Mailgun(FormData);
+const client = mailgun.client({username: 'api', key: API_KEY}); // Replace with your actual Mailgun API key
+
+// Handle form submission
+async function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get form data from the form (event.target refers to the form)
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Extract form values (name, email, subject, message)
+    const name = formData.get("name");
+    const userEmail = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+
+    // Prepare email message
+    const messageData = {
+        from: "Excited User <mailgun@sandbox26e98113d9a543bab05be88eff947301.mailgun.org>", // Sender's address
+        to: ["yashvi.patel3@dcmail.ca"], // Replace with recipient's email
+        subject: `New message from ${name} - ${subject}`, // Dynamic subject
+        text: `You have a new message from ${name} (${userEmail}):\n\nSubject: ${subject}\n\nMessage:\n${message}`,
+    };
+
+    try {
+        // Send email via Mailgun
+        const response = await client.messages.create('YOUR_DOMAIN', messageData); // Replace with your domain
+        console.log(response); // Log response data
+    } catch (err) {
+        console.error(err); // Handle errors
+    }
+}
+
+// Attach form submit event listener
+const form = document.getElementById("form");
+form.addEventListener("submit", handleFormSubmit);
+</script> --}}
+{{!-- 
+<script>
+// Handle form submission
+async function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get form data from the form (event.target refers to the form)
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Extract form values
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+
+    // Prepare the data to send to the Netlify function
+    const formPayload = {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message
+    };
+
+    try {
+        // Send the data to your Netlify function via a POST request
+        const response = await fetch('/.netlify/functions/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formPayload)
+        });
+
+        const data = await response.json();
+
+        // Handle success (you can display a success message to the user here)
+        if (response.ok) {
+            alert("Message sent successfully!");
+        } else {
+            alert("There was an error sending your message.");
+        }
+    } catch (error) {
+        console.error("Error sending message:", error);
+        alert("There was an error sending your message.");
+    }
+}
+
+// Attach form submit event listener
+const form = document.getElementById("form");
+form.addEventListener("submit", handleFormSubmit);
+</script> --}}
+
+<script>
+  document.getElementById('form').addEventListener('submit', async (event) => {
+    event.preventDefault();  // Prevent default form submission
+
+   console.log('Request body:', event.body);
+    const formData = new FormData(event.target);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/.netlify/functions/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),  // Send data as JSON
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        console.log('Email sent successfully!', result);
+      } else {
+        console.error('Error sending email:', result);
+      }
+    } catch (error) {
+      console.error('Error in form submission:', error);
+    }
+  });
+</script>
+
+
