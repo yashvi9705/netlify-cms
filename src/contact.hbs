@@ -23,15 +23,14 @@ layout: layouts/default.hbs
       <input type="text" id="message" name="message" class="form-control" placeholder="Enter your message"  required>
     </div>
 
+    <!-- Loading spinner -->
+  <div id="loading" style="display: none;">Sending...</div>
+
+  <!-- Success message -->
+  <div id="successMessage" style="display: none;">Your message has been sent!</div>
+
     <button type="submit" class="btn">Submit</button>
-  {{!-- <p>
-    <label>Name <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Email <input type="email" name="email" /></label>
-  </p>
-  <p> --}}
-    {{!-- <button type="submit">Send</button> --}}
+
   </p>
 </form>
 
@@ -133,6 +132,10 @@ form.addEventListener("submit", handleFormSubmit);
   document.getElementById('form').addEventListener('submit', async (event) => {
     event.preventDefault();  // Prevent default form submission
 
+    // Show the loading spinner and hide the success message
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('successMessage').style.display = 'none';
+
    console.log('Request body:', event.body);
     const formData = new FormData(event.target);
     const data = {
@@ -153,6 +156,12 @@ form.addEventListener("submit", handleFormSubmit);
       const result = await response.json();
       if (response.ok) {
         console.log('Email sent successfully!', result);
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+        
+        // Reset the form fields
+        event.target.reset();
+
       } else {
         console.error('Error sending email:', result);
       }
